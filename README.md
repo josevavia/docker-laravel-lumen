@@ -31,7 +31,7 @@ NOTE:  the "name" of the project should be "src" to create the folder properly
 
 
 ### Config
-####Configure containers
+#### Configure containers
 Before you start your application make sure you have created the file `.env` with the correct Docker configuration values. Please take a look into the example on the file **.env.example**
 ```
     cp .env.example .env
@@ -45,7 +45,7 @@ Explanation of each variable in the `.env` file:
 - DB_PASS => password for your database connections              
 - DB_ROOT_PASS => password of the root user of the mysql server inside the mysql container         
                  
-####Configure Lumen
+#### Configure Lumen
 You can configure Lumen following the steps of a normal installation of Lumen (https://lumen.laravel.com/docs/5.6/installation#configuration)
 To configure the connection to the database in the mysql container, your `./src/.env` file must be configured as follows:
 ```
