@@ -7,4 +7,6 @@ chmod -R 777 storage
 
 php artisan migrate
 
+php artisan db:seed
+
 /sbin/my_init
