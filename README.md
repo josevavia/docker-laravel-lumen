@@ -7,7 +7,7 @@ include the Lumen source files)
 
 ### Install
 
-Before you start make sure you have [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
+Before you start make sure you have [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
 
 Clone the repo by running the following command
 
