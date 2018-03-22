@@ -1,4 +1,4 @@
-# Docker Lumen
+# Docker Laravel - Lumen
 All this project is completely based on the work of [prbdias](https://github.com/prbdias/docker-lumen) 
 in his repository [docker-lumen](https://github.com/prbdias/docker-lumen)
 
@@ -13,21 +13,27 @@ Clone the repo by running the following command
 
     git clone https://github.com/josevavia/docker-lumen.git
 
-### Create lumen project
-The Lumen project (and all the *php files of your application) should be in the `./src` directory.
-You can create this directory and all the files of the Lumen framework following the steps of a normal installation of lumen (https://lumen.laravel.com/docs/5.6/installation)
+### Create project
+You can use this docker-compose setup either with a Lumen or Laravel project. The only thing you need is to put the
+source of your app in the `./src` directory.
 
-I recommend to use the Lumen installer via composer: 
+You have a lot of ways to do this, but I prefer to user de Laravel/Lumen installers.
 
-#### Install lumen installer (if needed):
+NOTE:  the "name" of the project should be **src** to create the folder properly
+
+#### Laravel project
+
+    composer global require "laravel/laravel-installer"
+    laravel new src
+    
+#### Lumen project
 
     composer global require "laravel/lumen-installer"
-    
-#### Create a new Lumen project in the last version
-
     lumen new src
     
-NOTE:  the "name" of the project should be "src" to create the folder properly
+#### Other options
+Any other option to create a `./src` directory with the source code of the laravel/lumen project should work.    
+    
 
 
 ### Config
@@ -45,8 +51,8 @@ Explanation of each variable in the `.env` file:
 - DB_PASS => password for your database connections              
 - DB_ROOT_PASS => password of the root user of the mysql server inside the mysql container         
                  
-#### Configure Lumen
-You can configure Lumen following the steps of a normal installation of Lumen (https://lumen.laravel.com/docs/5.6/installation#configuration)
+#### Configure Laravel/Lumen
+You can configure Laravel/Lumen following the steps of a normal installation 
 To configure the connection to the database in the mysql container, your `./src/.env` file must be configured as follows:
 ```
 DB_CONNECTION=mysql
@@ -59,6 +65,11 @@ DB_PASSWORD=pass
 Notes: 
 - The hostname is the name of the mysql container (defined in docker-compose.yaml)
 - The database, username and password are the same values as configured in `.env`
+
+You can follow the official guides to configure the other variables in the `.env` file 
+- https://laravel.com/docs/5.6/configuration
+- https://lumen.laravel.com/docs/5.6/installation#configuration
+
  
 ### Start
 To start you application you just need to run the following command 
