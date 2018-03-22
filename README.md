@@ -51,8 +51,8 @@ Explanation of each variable in the `.env` file:
 - DB_PASS => password for your database connections              
 - DB_ROOT_PASS => password of the root user of the mysql server inside the mysql container         
                  
-#### Configure Laravel/Lumen
-You can configure Laravel/Lumen following the steps of a normal installation 
+#### Configure project
+You can configure the project following the steps of a normal installation 
 To configure the connection to the database in the mysql container, your `./src/.env` file must be configured as follows:
 ```
 DB_CONNECTION=mysql
