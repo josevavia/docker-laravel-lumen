@@ -77,16 +77,19 @@ To start you application you just need to run the following command
     $ docker-compose up
     
 ### Test
-##### PHP-FPM
-Give it 5min while composer installs all the Lumen dependencies automatically under the vendor folder.
-
-Once it has finished you should be able to see Lumen's default page on your [http://127.0.0.1:9080](http://127.0.0.1:9080).
 
 Notes: 
 - NGINX ports are 9080 and 9443, forwarded to 80 and 443
 - Mysql port is 9306, forwarded to 3306
 - Redis port is 6379
+- Mailhog SMTP port is 1025, and HTTP port is 8025
 - You can change this ports and forwardings in `docker-compose.yaml`
+
+##### PHP-FPM
+Give it 5min while composer installs all the dependencies automatically under the vendor folder.
+
+Once it has finished you should be able to see your default page on your [http://127.0.0.1:9080](http://127.0.0.1:9080).
+
 
 ##### PHP-CLI
 In order to run PHP on the command line you can list all the containers by running 
@@ -104,3 +107,20 @@ And then you will have PHP ready for you, just give it a try!
 
 
     $ php artisan 
+
+
+
+##### MAILHOG
+To allow rapid testing and development, this docker-compose configuration includes a Mailhog container.
+In order to configure your mailer to use Mailhog, you can follow this setup (based in a .env file of Laravel)
+
+```
+MAIL_DRIVER=smtp
+MAIL_HOST=mail
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+```
+
+Note that the host name and port are the Mailhog container name and exposed port respectively
