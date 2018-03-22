@@ -52,6 +52,7 @@ services:
     build: ./build/workspace
     volumes:
       - ./src:/var/www
+      - ./logs/lumen:/var/www/storage/logs
     links:
       - mysql
       - redis
