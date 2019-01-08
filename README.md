@@ -23,7 +23,7 @@ NOTE:  the "name" of the project should be **src** to create the folder properly
 
 #### Laravel project
 
-    composer global require "laravel/laravel-installer"
+    composer global require laravel/installer
     laravel new src
     
 #### Lumen project
